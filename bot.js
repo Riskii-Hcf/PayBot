@@ -210,18 +210,6 @@ var helpembed = new Discord.RichEmbed()
 message.react("406932185371901964");
 message.channel.sendEmbed(helpembed);
 break;
-case "password":
-var a = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s","t","u", "v", "w", "x","y","z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S","T","U", "V", "W", "X","Y","Z"];
-message.reply(a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )] + a[Math.floor(Math.random() * a.length )]);
-break;
-case "servers":
-var servers = new Discord.RichEmbed()
-.setTitle("Aloid's Servers")
-.setDescription(`**I am in ${bot.guilds.size} servers, with ${bot.users.size} users and guilds:\n**` + bot.guilds.map(g=>g.name).join(", "))
-.setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-.setColor(0x721487)
-message.channel.sendEmbed(servers);
-break;
 case "suggest":
 if (args[1]) {
 var time = new Date();
@@ -358,16 +346,8 @@ message.delete();
 
 }
 purge();
-        case "nick":
-		if(message.guild.member(message.author).hasPermission(`ADMINISTRATOR`)) {
-		 var nickargs = message.content.substring(prefix.length+5).split(" ");
-                    const nickmsg = nickargs.join(" ");
-		message.guild.members.get(bot.user.id).setNickname(nickmsg);
-		message.reply(":white_check_mark: Nickname has been changed to **" + nickmsg + "** !");
-		} else {
-			message.reply(":x: You have missing permissions: **ADMINISTATOR**! :x:");
-		}
-    break;
+break;
+    
     case "info":
     const used = process.memoryUsage().heapUsed / 1024 / 1024;
     const owner = "123silly#0001";
