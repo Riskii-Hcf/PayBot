@@ -232,12 +232,6 @@ message.reply("<:aloid_09:406932185371901964> Suggestion has been sent! :mailbox
   return message.reply(":x: **PLEASE WRITE A SUGGESTION!** :x:");
 }
 break;
-case "config-suggestion":
-var server = message.guild;
-var name = "suggestion";
-server.createChannel(name, "text");
-message.reply(`Channel has been created, please disable writing messages for members!`)
-break;
 case "say":
 if(message.author.id == "395954014715510784") {
     var sayargs = message.content.substring(prefix.length+4).split(" ");
@@ -248,19 +242,6 @@ if(message.author.id == "395954014715510784") {
 
         message.channel.send(":x: **Bot Owner Only**");
     }
-break;
-case "dbl":
-if(message.author.id == "395954014715510784") {
-  const snekfetch = require('snekfetch');
-  const dblToken = 'no dbl token for you hehe';
-snekfetch.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
-      .set("Authorization", dblToken)
-      .send({ server_count: bot.guilds.size })
-      .then(() => console.log("Sent guild count to discordbots.org!"));
-  } else {
-
-      message.channel.send(":x: **Bot Owner Only**");
-  }
 break;
 case "mc":
 if (args[1]) {
@@ -276,21 +257,6 @@ if (args[1]) {
 message.channel.sendEmbed(mcskin);
 } else {
 message.reply("Please enter a nickname!");
-}
-break;
-case "antiinvite":
-if(message.guild.member(message.author).hasPermission(`ADMINISTRATOR`)) {
-if (args[1] === "on") {
-  guilds[message.guild.id].advert=1; //sets it to 1
-  message.channel.sendMessage(`<:aloid_09:406932185371901964> **ANTI-DISCORD-LINKS MODULE HAS BEEN TURNED ON!!**`)
-} else if (args[1] === "off") {
-  guilds[message.guild.id].advert=0; //sets it to 0
-  message.channel.sendMessage(":x: **TURNED OFF ANTI-DISCORD-LINKS MODULE** :x:")
-} else {
-  message.channel.sendMessage(":x: **INVALID USAGE!** Usage: ${prefix}antiadvert on/off");
-}
-} else {
-	message.reply(":x: You have missing permissions: **ADMINISTATOR**! :x:");
 }
 break;
 case "8ball":
@@ -326,35 +292,14 @@ if (!useri) {
 	message.channel.sendEmbed(spme);
 }
 break;
-case "purge":
-async function purge() {
-  message.delete(); 
-  if(!message.guild.member(message.author).hasPermission(`MANAGE_MESSAGES`)) {
-      message.reply(`:x: You have missing permissions: **MANAGE_MESSAGES**! :x:`);
-      return;
-  }
-
-  if (!args[1]) {
-      message.channel.send('Please use a number as your arguments. \n Usage: ' + prefix + 'purge <amount>'); 
-      return;
-  }
-message.delete();
-  const fetched = await message.channel.fetchMessages({limit: args[1]});
-  console.log(fetched.size + ' messages found, deleting...');
-  message.channel.bulkDelete(fetched)
-      .catch(error => message.channel.send(`Error: ${error}`));
-
-}
-purge();
-break;
     
     case "info":
     const used = process.memoryUsage().heapUsed / 1024 / 1024;
-    const owner = "123silly#0001";
+    const owner = "Riskii#3057";
     const laungage = "Discord.JS/Node.JS";
     var infoe = new Discord.RichEmbed()
     .setTitle(`Info about Aloid`)
-    .setDescription(`Hello i am Aloid,\nA bot which will make your server better(and funnier)\nI am owned by **${owner}** and i was coded in **${laungage}**!\nHere is some information about me:\n\nName: Aloid\nCreator: ${owner}\nMemory used: ${Math.round(used * 100) / 100}MB\nUptime: ${parseTime(bot.uptime)}\nServer Count: ${bot.guilds.size}\nUsers: ${bot.users.size}\nChannels: ${bot.channels.size}`)
+    .setDescription(`Hello i am PayBot,\nA bot which will make your server better(and funnier)\nI am owned by **${owner}** and i was coded in **${laungage}**!\nHere is some information about me:\n\nName: Aloid\nCreator: ${owner}\nMemory used: ${Math.round(used * 100) / 100}MB\nUptime: ${parseTime(bot.uptime)}\nServer Count: ${bot.guilds.size}\nUsers: ${bot.users.size}\nChannels: ${bot.channels.size}`)
     .setFooter(`ALOID COPYRIGHT 2018`)
     .setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
     .setThumbnail(`https://bts.net.pl/cdn/aloid.png`)
@@ -381,14 +326,6 @@ break;
 		.setColor(0x721487)
 		message.channel.sendEmbed(emojie);
     break;
-    case "invite":
-    var invite = new Discord.RichEmbed()
-    .setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-      .setTitle(`Invite me to your server using this link!`)
-      .setColor(0x721487)
-      .setDescription(`[Click me!](https://discordapp.com/oauth2/authorize?client_id=410825339757920257&permissions=8&redirect_uri=https%3A%2F%2Fbts.net.pl%2Faloid%2Fthanks&response_type=code&scope=bot%20identify)`)
-    message.channel.sendMessage(invite);
-    break;
     // START OF MOD CMDS
   }
 });
@@ -404,14 +341,14 @@ bot.on("message", function(message) {
 case "<@410825339757920257>":
 message.reply(`My prefix is ${prefix}!`);
 break;
-case "@Aloid":
+case "Botprefix":
 message.reply(`My prefix is ${prefix}!`);
 break;
 }
 });
 
 bot.on("guildCreate", guild => {
-  guild.owner.sendMessage(`Hello <@${guild.owner.id}>,\nI have been invited to ${guild.name}!\n\nTo start with me simply type **(help** in your discord server!\n**PLEASE NOTICE:** Before using any moderation command please do (addmod\n\nInvite me: http://urlr.pl/aloid \nSupport Discord Server: https://discord.gg/v6XQCQB\n\n\nAloid by 123silly#0001 | Made with :heart:`)
+  guild.owner.sendMessage(`Hello <@${guild.owner.id}>,\nI have been invited to ${guild.name}!\n\nTo start with me simply type **(help** in your discord server!\n**PLEASE NOTICE:** Before using any moderation command please do (addmod\n\nInvite me: https://discordapp.com/api/oauth2/authorize?client_id=413404274173935616&permissions=2146958583&scope=bot \nSupport Discord Server: https://discord.gg/7TeVwdE\n\n\nPayBot By Riskii#3057`)
 
 })
 bot.login(process.env.BOT_TOKEN);
