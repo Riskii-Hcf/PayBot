@@ -146,9 +146,9 @@ if(message.channel.type === 'dm') {
 	if (args[1]) {
   const newPrefix = args.slice(1).join(" ");
   guilds[message.guild.id].prefix = newPrefix;
-  message.reply(`New prefix for **${message.guild.name}** is **${newPrefix}** ! :x: **NOTICE:** Prefix cannot be changed to music part, sorry.`);
+  message.reply(`The Server Prefix Is Now ${newPrefix}`);
 	} else {
-		message.reply(":x: **Your prefix cant be empty!** :x:");
+		message.reply("**Prefix Letter Can't Be Empty**");
 	}
 }
 } else {
@@ -215,73 +215,7 @@ message.channel.sendEmbed(mcskin);
 message.reply("Please enter a nickname!");
 }
 break;
-case "8ball":
-if (args[1]) {
-var balls = ["Nope", "No", "Nah", "Nuu!", "Never", "I think not", "Maybe no", "Yes", "Yas", "Always", "I think yes", "Maybe yes", "Maybe"];
-var qargs = message.content.substring(prefix.length+6).split(" ");
-const qumsg = qargs.join(" ");
-var balle = new Discord.RichEmbed()
-.setTitle(`Aloid's 8ball`)
-.setDescription(`Question: ` + qumsg + `\n\nAnswer: ` + balls[Math.floor(Math.random() * balls.length)])
-.setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-.setThumbnail(`https://emojipedia-us.s3.amazonaws.com/thumbs/120/apple/118/billiards_1f3b1.png`)
-.setFooter(`Here is my answer to your question...`)
-.setColor(0x721487)
-message.channel.sendEmbed(balle);
-} else {
-	message.reply("Please write a question.");
-}
-break;
-case "avatar":
-let useri = message.mentions.users.first();
-if (!useri) {
-	var ave = new Discord.RichEmbed()
-	.setImage(message.author.avatarURL)
-	.setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-	.setColor(0x721487)
-	message.channel.sendEmbed(ave);
-} else {
-	var spme = new Discord.RichEmbed()
-	.setImage(useri.avatarURL)
-	.setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-	.setColor(0x721487)
-	message.channel.sendEmbed(spme);
-}
-break;
-    
-    case "info":
-    const used = process.memoryUsage().heapUsed / 1024 / 1024;
-    const owner = "Riskii#3057";
-    const laungage = "Discord.JS/Node.JS";
-    var infoe = new Discord.RichEmbed()
-    .setTitle(`Info about PayBot`)
-    .setDescription(`Hello i am PayBot,\nA bot which will make your server better(and funnier)\nI am owned by **${owner}** and i was coded in **${laungage}**!\nHere is some information about me:\n\nName: Aloid\nCreator: ${owner}\nMemory used: ${Math.round(used * 100) / 100}MB\nUptime: ${parseTime(bot.uptime)}\nServer Count: ${bot.guilds.size}\nUsers: ${bot.users.size}\nChannels: ${bot.channels.size}`)
-    .setFooter(`PayBot`)
-    .setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-    .setThumbnail(`https://vignette.wikia.nocookie.net/creepypasta/images/e/e2/Anime-Girl-With-Silver-Hair-And-Purple-Eyes-HD-Wallpaper.jpg/revision/latest?cb=20140120061808`)
-    .setColor(0x721487)
-    message.channel.sendEmbed(infoe);
-    break;
-		case "raw":
-		var rawargs = message.content.substring(prefix.length+4).split(" ");
-                    const rawmsg = rawargs.join(" ");
-					if (args[1]) {
-        hastebin(rawmsg).then(r => {
-            message.channel.send("<:aloid_09:406932185371901964> Posted text to Hastebin at this URL: " + r);
-        }).catch(console.error);
-					} else {
-						message.reply("Please write a message!");
-					}
-		break;
-		case "emojis":
-		const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
-		var emojie = new Discord.RichEmbed()
-		.setTitle(`Emoji List in ${message.guild.name}!`)
-		.setDescription(emojiList)
-		.setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-		.setColor(0x721487)
-		message.channel.sendEmbed(emojie);
-    break;
+	
     // START OF MOD CMDS
   }
 });
@@ -294,13 +228,6 @@ bot.on("message", function(message) {
   var autorespond = message.content;
   
   switch (autorespond.toLowerCase()) {
-case "<@410825339757920257>":
-message.reply(`My prefix is ${prefix}!`);
-break;
-case "Botprefix":
-message.reply(`My prefix is ${prefix}!`);
-break;
-}
 });
 
 bot.on("guildCreate", guild => {
