@@ -172,10 +172,21 @@ message.guild.channels.find("name", "suggestion").sendMessage(sembed).then(funct
 }).catch(function() {
   //Something
  });
-message.reply("<:aloid_09:406932185371901964> Suggestion has been sent! :mailbox:");
+message.reply("Suggestion has been sent!");
 } else {
   return message.reply(":x: **PLEASE WRITE A SUGGESTION!** :x:");
 }
+break;
+case "help":
+var helpembed = new Discord.RichEmbed()
+.setTitle(`Aloid's Commands List`)
+.setDescription(`**[PRESS ME FOR COMMAND LIST](https://boom-picture.glitch.me/)**\n\nPrefix is: **${prefix}** !\n\n[Invite Me!](http://bts.net.pl/aloid)\n[Support Discord Server](https://discord.gg/fVuRsby)\n[Special thanks to telk](https://discord.gg/3FKGeFw) `)
+.setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
+.setFooter(`By Riskii#3057 [PayBot 1.0]`)
+.setThumbnail(`https://bts.net.pl/cdn/aloid.png`)
+.setColor(0x721487)
+message.react("406932185371901964");
+message.channel.sendEmbed(helpembed);
 break;
 case "say":
 if(message.author.id == "395954014715510784") {
@@ -243,11 +254,11 @@ break;
     const owner = "Riskii#3057";
     const laungage = "Discord.JS/Node.JS";
     var infoe = new Discord.RichEmbed()
-    .setTitle(`Info about Aloid`)
+    .setTitle(`Info about PayBot`)
     .setDescription(`Hello i am PayBot,\nA bot which will make your server better(and funnier)\nI am owned by **${owner}** and i was coded in **${laungage}**!\nHere is some information about me:\n\nName: Aloid\nCreator: ${owner}\nMemory used: ${Math.round(used * 100) / 100}MB\nUptime: ${parseTime(bot.uptime)}\nServer Count: ${bot.guilds.size}\nUsers: ${bot.users.size}\nChannels: ${bot.channels.size}`)
-    .setFooter(`ALOID COPYRIGHT 2018`)
+    .setFooter(`PayBot`)
     .setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-    .setThumbnail(`https://bts.net.pl/cdn/aloid.png`)
+    .setThumbnail(`https://vignette.wikia.nocookie.net/creepypasta/images/e/e2/Anime-Girl-With-Silver-Hair-And-Purple-Eyes-HD-Wallpaper.jpg/revision/latest?cb=20140120061808`)
     .setColor(0x721487)
     message.channel.sendEmbed(infoe);
     break;
