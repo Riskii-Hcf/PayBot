@@ -90,7 +90,7 @@ message.channel.sendMessage(<@${message.author.id}> -> **Commands List** has bee
 var embedt = new Discord.RichEmbed()
 .setTitle("All Commands")
 .setDescription('These Commands Will Help You!')
-.setThumbnail ('https://ak4.picdn.net/shutterstock/videos/10035044/thumb/1.jpg%27)
+.setThumbnail ('https://ak4.picdn.net/shutterstock/videos/10035044/thumb/1.jpg%27')
 .addField('=8ball', ':8ball: Gives A Answer!')
 .addField('=ping', 'Shows A 99% Correct Ping.')
 .addField('=emojis', 'Shows A L Emoji / Image.')
