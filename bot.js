@@ -95,28 +95,6 @@ if (as === 1) { //detects if antiswear is on or not
   }
 }
 
-var animepics = [
-  'https://cdn.discordapp.com/attachments/409118997305622529/409792198671073280/Capture.PNG',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793133006815252/9e2dece20151845674870f36e0e5350402e660c3_hq.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793166292549652/79e80478f9996d39a081fc118e4ebcc0.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793206398484491/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793252691279872/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793273318735873/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793299226820609/812811c91bb75f942a8a1b20e7cc73fb.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793317627363329/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793359402500106/3760262.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793434451443712/aa26f348c73960481be1b1efff191522678d912a_hq.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793556866400257/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793571085090816/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793595730690048/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793649040293898/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793664236388352/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793747694518272/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409793937625055232/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409794051760717844/zjWm8ky5.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409794057011986432/images.png',
-  'https://cdn.discordapp.com/attachments/409118997305622529/409794136208572426/images.png',
-];
 
 var h = [
   'https://simg3.gelbooru.com/images/95/68/9568145f22350f7acfc8efb54d6f694e.jpeg','https://files.yande.re/image/ce8e14c0b8919994e8c57152e3c7b8f6/yande.re%20432859%20censored%20fate_grand_order%20feet%20mash_kyrielight%20naked%20nipples%20pussy%20pussy_juice%20remana.jpg',
@@ -157,28 +135,6 @@ var parseTime = function(milliseconds) {
 
   var args = message.content.substring(prefix.length).split(" ");
   switch (args[0].toLowerCase()) {
-    case "eval":
-    if(message.author.id == "395954014715510784") {
-      try {
-        const code = args.join(` `);
-        let evaled = eval(code);
-  
-        if (typeof evaled !== `string`)
-          evaled = require(`util`).inspect(evaled);
-
-        const embed = new Discord.RichEmbed()
-        .setTitle(`Evaluating...`)
-        .setColor(hexcols[~~(Math.random() * hexcols.length)])
-        .setDescription(`Input:\n${code}\n \nOutput:\n${clean(evaled)}`);
-        message.channel.send({embed});
-      } catch (err) {
-        message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-          }
-    } else {
-      message.reply("Really? Eval? Heh, nice try tho.");
-    }
-    break;
-
 case "ping":
 message.reply(`Pong! ${Math.round(bot.ping)}ms`);
 break;
@@ -198,17 +154,6 @@ if(message.channel.type === 'dm') {
 } else {
 	message.reply(":x: You are missing **ADMINISTRATOR** permission! :x:");
 }
-break;
-case "help":
-var helpembed = new Discord.RichEmbed()
-.setTitle(`Aloid's Commands List`)
-.setDescription(`**[PRESS ME FOR COMMAND LIST](https://bts.net.pl/aloid/cmds)**\n\nPrefix is: **${prefix}** !\n\n[Invite Me!](http://bts.net.pl/aloid)\n[Support Discord Server](https://discord.gg/fVuRsby)\n[Special thanks to telk](https://discord.gg/3FKGeFw) `)
-.setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-.setFooter(`By 123silly#0001 | Aloid 1.6v Copyright`)
-.setThumbnail(`https://bts.net.pl/cdn/aloid.png`)
-.setColor(0x721487)
-message.react("406932185371901964");
-message.channel.sendEmbed(helpembed);
 break;
 case "suggest":
 if (args[1]) {
