@@ -165,7 +165,7 @@ if(message.channel.type === 'dm') {
 }
 break;
 	  case "bank":
-message.reply(`Banking System ```Bank``` $balance`);
+message.reply(`Banking System balance`);
 break;
 case "help":
 message.delete("help")
