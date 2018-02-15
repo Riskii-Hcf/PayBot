@@ -2,7 +2,7 @@ const Discord = require('discord.js');
  
 const bot = new Discord.Client();
  
-const token = "Hell Nah";
+const token = "What Is A Token?";
  
 var prefix = '!';
  
@@ -32,7 +32,7 @@ var eb = ["You can help youself right?",
 "Very doubtful"];
  
 bot.on("ready", function() {
-      bot.user.setGame("[PayBot] Prefix = !" , "https://www.twitch.tv/123silly");
+      bot.user.setGame("PayBot Prefix = !" , "https://www.twitch.tv/123silly");
     console.log(`Started bot as: ${bot.user.tag}!`);
 });
  
@@ -85,22 +85,23 @@ break;
 		
 case "help":
 message.delete("help")
-console.log(Help message has been sent to <@${message.author.id}> !)
-message.channel.sendMessage(<@${message.author.id}> -> **Commands List** has been sent to your pm/dm!)
+console.log(`Help message has been sent to <@${message.author.id}> !`)
+message.channel.sendMessage(`<@${message.author.id}> -> **Commands List** has been sent to your pm/dm!`)
 var embedt = new Discord.RichEmbed()
 .setTitle("All Commands")
 .setDescription('These Commands Will Help You!')
-.setThumbnail ('https://ak4.picdn.net/shutterstock/videos/10035044/thumb/1.jpg%27')
-.addField('=8ball', ':8ball: Gives A Answer!')
-.addField('=ping', 'Shows A 99% Correct Ping.')
-.addField('=emojis', 'Shows A L Emoji / Image.')
-.addField('=say', 'Say Whatver You Said.')
-.addField('=bank', 'Shows The Whole Bank On The Discord Server')
-.addField('!bal [player]', 'Shows Discord Member Bank Balance')
-.addField('!reward' 'Gives You A Reward Daily [Beta].')
-.addField('!mc [user]', 'Shows You The Info Of A Minecraft Player')
-.addField('!help', 'Shows Help Command.')
-.setFooter("PayBot [Banking / Ranking System Bot 1.0]")
+.setThumbnail ('https://ak4.picdn.net/shutterstock/videos/10035044/thumb/1.jpg')
+.addField(`!8ball`, `:8ball: Gives A Answer!`)
+.addField(`!ping`, `Shows A 99% Correct Ping.`)
+.addField(`!emojis`, `Shows A L Emoji / Image.`)
+.addField(`!say`, `Say Whatver You Said.`)
+.addField(`!bal`, `Shows Your $$$ Balance.`)
+.addField(`!mc [player]`, `Shows Minecraft Info.`)
+.addField(`!bank`, `Shows The Whole Discord Server Bank.`)
+.addField(`!coinflip`, `Gives You A Head Or Tail.`)
+.addField(`!reward`, `Daily Reward For You!`)
+.addField(`!work`, `Work For Money.`)
+.setFooter("PayBot [Help]")
 .setColor(0x1ab517)
 message.author.sendEmbed(embedt)
 break;
