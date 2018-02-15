@@ -82,7 +82,10 @@ var result = Math.floor((Math.random() * 2) + 1);
 message.reply('The coin landed on tails');
 }
 break;
-		
+
+	case "invite":
+	message.reply('Invite Me Here! https://discordapp.com/api/oauth2/authorize?client_id=413404274173935616&permissions=2146958583&scope=bot')
+	break;	
 case "help":
 message.delete("help")
 console.log(`Help message has been sent to <@${message.author.id}> !`)
