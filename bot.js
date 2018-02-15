@@ -121,7 +121,7 @@ var parseTime = function(milliseconds) {
 };
 
 
-  const prefix = guilds[message.guild.id].prefix;
+  const prefix = "!"
 
   const hexcols = [0xFFB6C1, 0x4C84C0, 0xAD1A2C, 0x20b046, 0xf2e807, 0xf207d1, 0xee8419, 0x8a2be2];
 
