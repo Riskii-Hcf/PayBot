@@ -145,6 +145,11 @@ let messagecount = parseInt(args[1]);
     message.reply("Please type number of messages to delete.");
 }
 break;
+
+	case "bal":
+	message.reply('Balance: $(balance.bank)');
+	break;
+	
 		
 	
  
