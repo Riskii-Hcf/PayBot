@@ -96,17 +96,6 @@ if (as === 1) { //detects if antiswear is on or not
 }
 
 
-var h = [
-  'https://simg3.gelbooru.com/images/95/68/9568145f22350f7acfc8efb54d6f694e.jpeg','https://files.yande.re/image/ce8e14c0b8919994e8c57152e3c7b8f6/yande.re%20432859%20censored%20fate_grand_order%20feet%20mash_kyrielight%20naked%20nipples%20pussy%20pussy_juice%20remana.jpg',
-  'https://simg3.gelbooru.com/images/ef/e8/efe83f21c2d222b68559bd2816aef4e8.png',
-  'https://danbooru.donmai.us/data/__megumin_kono_subarashii_sekai_ni_shukufuku_wo_drawn_by_apoidea__b31ab36f6e4b62102e81a4f92cbeb9b0.jpg',
-  'https://konachan.com/image/54eaeb126270dffe405042bffa46a3e9/Konachan.com%20-%20259982%20ass%20ass_grab%20bed%20brown_hair%20green_eyes%20gyouza_teishoku%20naked_shirt%20original%20sex%20short_hair.png',
-  'https://files.yande.re/image/1a4d3fafcb34a269d7d203370168c507/yande.re%20432823%20anus%20ass%20ass_grab%20monster%2Bmusume%20monster_girl%20nipples%20pantsu%20pointy_ears%20pussy%20sayori%20thong%20topless.jpg',
-  'https://simg3.gelbooru.com/images/4c/7b/4c7b8a289d8b0a74073bc2debe27ed38.gif',
-  'https://danbooru.donmai.us/data/__hakurei_reimu_and_sananana_cookie_touhou_and_touhou_drawn_by_oozon_ozon__83d50be518f74ca31d5a38bca8c56d0a.png',
-  'https://konachan.com/image/0b7c462faad96aadad4f9b09f2b5c91f/Konachan.com%20-%20259325%20anus%20ass%20ass_grab%20creampie%20cum%20game_cg%20green_eyes%20green_hair%20hunie_pop%20long_hair%20ninamo%20theiatena_venus%20uncensored.jpg',
-  'https://files.yande.re/image/a2d9643fb870bd5c3684f48681b6b0e0/yande.re%20433012%20boku_wa_tomodachi_ga_sukunai%20breasts%20cait%20kashiwazaki_sena%20kimono%20nipples%20no_bra%20nopan%20open_shirt%20pussy%20uncensored.png'];
-
 var parseTime = function(milliseconds) {
   var seconds = Math.floor(milliseconds/1000); milliseconds %= 1000;
   var minutes = Math.floor(seconds/60); seconds %= 60;
@@ -178,29 +167,6 @@ break;
 	  case "bank":
 message.reply(`Banking System ```Bank``` $balance`);
 break;
-
-case "suggest":
-if (args[1]) {
-var time = new Date();
-var sugargs = message.content.substring(prefix.length+8).split(" ");
-const sugmsg = sugargs.join(" ");
-var sembed = new Discord.RichEmbed()
-.setTitle(`**Suggestion**`)
-.setDescription(`${sugmsg}`)
-.setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-.setFooter(`Sent at ${time}`)
-.setColor(0xe8d830)
-message.guild.channels.find("name", "suggestion").sendMessage(sembed).then(function (message) {
-  message.react("đź‘Ť")
-  message.react("đź‘Ž")
-}).catch(function() {
-  //Something
- });
-message.reply("Suggestion has been sent!");
-} else {
-  return message.reply(":x: **PLEASE WRITE A SUGGESTION!** :x:");
-}
-break;
 case "help":
 message.delete("help")
 console.log(`Help message has been sent to <@${message.author.id}> !`)
@@ -239,13 +205,6 @@ message.channel.sendEmbed(mcskin);
 message.reply("Please enter a nickname!");
 }
 break;
-	
-    // START OF MOD CMDS
-  }
-});
-
-bot.on("message", function(message) {
-  if (message.author.equals(bot.user)) return;
 
   const prefix = guilds[message.guild.id].prefix;
   
