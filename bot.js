@@ -138,6 +138,26 @@ var parseTime = function(milliseconds) {
 case "ping":
 message.reply(`Pong! ${Math.round(bot.ping)}ms`);
 break;
+case "8ball":
+if (args[1]) {
+  message.channel.sendMessage(':8ball: ' + message + '? - `' + eb[Math.floor(Math.random() * eb.length)] + '`');
+} else {
+  message.channel.sendMessage("Please provide a question");
+}
+break;
+case "coinflip":
+var result = Math.floor((Math.random() * 2) + 1);
+    if (result === 1) {
+    message.reply('The coin landed on heads');
+} else if (result === 2) {
+message.reply('The coin landed on tails');
+}
+break;
+ 
+case "emojis":
+const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
+message.channel.send(emojiList);
+break;
 case "prefix":
 if(message.guild.member(message.author).hasPermission(`ADMINISTRATOR`)) {
 if(message.channel.type === 'dm') {
@@ -154,6 +174,8 @@ if(message.channel.type === 'dm') {
 } else {
 	message.reply(":x: You are missing **ADMINISTRATOR** permission! :x:");
 }
+break;
+case "bank"
 break;
 case "suggest":
 if (args[1]) {
@@ -178,26 +200,26 @@ message.reply("Suggestion has been sent!");
 }
 break;
 case "help":
-var helpembed = new Discord.RichEmbed()
-.setTitle(`Aloid's Commands List`)
-.setDescription(`**[PRESS ME FOR COMMAND LIST](https://boom-picture.glitch.me/)**\n\nPrefix is: **${prefix}** !\n\n[Invite Me!](http://bts.net.pl/aloid)\n[Support Discord Server](https://discord.gg/fVuRsby)\n[Special thanks to telk](https://discord.gg/3FKGeFw) `)
-.setAuthor(`Requested by ${message.author.username}`, message.author.displayAvatarURL)
-.setFooter(`By Riskii#3057 [PayBot 1.0]`)
-.setThumbnail(`https://bts.net.pl/cdn/aloid.png`)
-.setColor(0x721487)
-message.react("406932185371901964");
-message.channel.sendEmbed(helpembed);
-break;
-case "say":
-if(message.author.id == "395954014715510784") {
-    var sayargs = message.content.substring(prefix.length+4).split(" ");
-                    const saymsg = sayargs.join(" ");
-                    message.delete().catch(O_o=>{});
-		    message.channel.sendMessage(saymsg);
-    } else {
-
-        message.channel.send(":x: **Bot Owner Only**");
-    }
+message.delete("help")
+console.log(`Help message has been sent to <@${message.author.id}> !`)
+message.channel.sendMessage(`<@${message.author.id}> -> **Commands List** has been sent to your pm/dm!`)
+var embedt = new Discord.RichEmbed()
+.setTitle("All Commands")
+.setDescription('These Commands Will Help You!')
+.setThumbnail ('https://ak4.picdn.net/shutterstock/videos/10035044/thumb/1.jpg')
+.addField(`=8ball`, `:8ball: Gives A Answer!`)
+.addField(`=ping`, `Shows A 99% Correct Ping.`)
+.addField(`=emojis`, `Shows A L Emoji / Image.`)
+.addField(`=say`, `Say Whatver You Said.`)
+.addField(`=bank`, `Shows The Whole Bank On The Discord Server`)
+.addField(`=bal [player]`, `Shows Discord Member Bank Balance`)
+.addField(`=reward`, `Gives You A Reward Daily [Beta].`)
+.addField(`=mc [user]`, `Kicks A User.`)
+.addField(`=prefix [prefix letter]`, `Gives You A New Prefix [Beta].`)
+.addField(`=help`, `Shows Help Command.`)
+.setFooter("PayBot [Banking / Ranking System Bot 1.0]")
+.setColor(0x1ab517)
+message.author.sendEmbed(embedt)
 break;
 case "mc":
 if (args[1]) {
