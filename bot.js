@@ -177,6 +177,7 @@ if(message.channel.type === 'dm') {
 break;
 case "bank"
 break;
+
 case "suggest":
 if (args[1]) {
 var time = new Date();
