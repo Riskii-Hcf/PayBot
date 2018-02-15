@@ -175,7 +175,8 @@ if(message.channel.type === 'dm') {
 	message.reply(":x: You are missing **ADMINISTRATOR** permission! :x:");
 }
 break;
-case "bank"
+case "bank";
+message.reply(`Banking System ```Bank``` $balance`);
 break;
 
 case "suggest":
