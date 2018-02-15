@@ -4,7 +4,7 @@ var token = "no token, just stop looking at token ffs lol";
 var guilds = {};
 
 bot.on("ready", function() {
-	  bot.user.setGame("PayPal Prefix = !", "https://www.twitch.tv/123silly");
+	  bot.user.setGame("PayBot Prefix = !", "https://www.twitch.tv/123silly");
     console.log(`Started bot as: ${bot.user.tag}!`);
 });
 
