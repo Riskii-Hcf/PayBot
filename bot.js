@@ -31,6 +31,12 @@ var eb = ["You can help youself right?",
 "Outlook not so good",
 "Very doubtful"];
  
+var lt = ["100% In Love",
+"Unknown",
+"90% In Love",
+"50% In Love",
+"0% In Love"];
+
 bot.on("ready", function() {
       bot.user.setGame("PayBot Prefix = !" , "https://www.twitch.tv/123silly");
     console.log(`Started bot as: ${bot.user.tag}!`);
@@ -111,7 +117,7 @@ break;
 
 case "lovetest":
 if (args[1]) {
-  message.channel.sendMessage(':heart: ' + ' - `' + eb[Math.floor(Math.random() * eb.length)] + '`');
+  message.channel.sendMessage(':heart: ' + ' - `' + lt[Math.floor(Math.random() * lt.length)] + '`');
 } else {
   message.channel.sendMessage("Please Provide Usernames");
 }
