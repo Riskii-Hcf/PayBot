@@ -32,7 +32,7 @@ var eb = ["You can help youself right?",
 "Very doubtful"];
  
 var lt = ["Earned 21$",
-"Earned 10%",
+"Earned 10$",
 "Earned 50$",
 "Earned 50$",
 "Earned 50$",
@@ -119,7 +119,7 @@ break;
 
 case "work":
 if (args[1]) {
-  message.channel.sendMessage('Test Result ' + '  `' + lt[Math.floor(Math.random() * lt.length)] + '`');
+  message.channel.sendMessage('You Have  ' + '  `' + lt[Math.floor(Math.random() * lt.length)] + '`');
 } else {
   message.channel.sendMessage("Please Provide Usernames");
 }
