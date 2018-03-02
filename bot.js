@@ -119,7 +119,7 @@ break;
 
 case "lovetest":
 if (args[1]) {
-  message.channel.sendMessage(':heart: ' + ' - `' + lt[Math.floor(Math.random() * lt.length)] + '`');
+  message.channel.sendMessage('Test Result ' + '  `' + lt[Math.floor(Math.random() * lt.length)] + '`');
 } else {
   message.channel.sendMessage("Please Provide Usernames");
 }
