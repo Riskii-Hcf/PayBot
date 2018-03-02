@@ -109,6 +109,10 @@ var embedt = new Discord.RichEmbed()
 message.author.sendEmbed(embedt)
 break;
 
+case "lovetest":
+message.reply(`Lovetesting! ${Math.round(bot.ping)}ms`);
+break;
+
 case "ping":
 message.reply(`Pong! ${Math.round(bot.ping)}ms`);
 break;
@@ -127,7 +131,7 @@ var mc = new Discord.RichEmbed()
 .addField('Username:', '' + args[1])
 .addField(`Skin:`, `https://minecraftskinstealer.com/skin.php?u=` + args[1] + '&s=700')
 .addField('NameMc:', 'https://namemc.com/name/' + args[1])
-.setFooter('Latenci')
+.setFooter('PayBot')
 message.channel.sendEmbed(mc)
 break;
 		
