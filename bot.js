@@ -33,9 +33,11 @@ var eb = ["You can help youself right?",
  
 var lt = ["100% In Love",
 "Unknown",
-"90% In Love",
-"50% In Love",
-"0% In Love"];
+"90% In Love With Someone",
+"50% In Love With Someone",
+"0% In Love With Someone",
+"20% In Love With Someone",
+"Already Are A Couple With Someone"];
 
 bot.on("ready", function() {
       bot.user.setGame("PayBot Prefix = !" , "https://www.twitch.tv/123silly");
