@@ -110,7 +110,8 @@ message.author.sendEmbed(embedt)
 break;
 
 case "lovetest":
-message.reply(`Lovetesting! ${Math.round(bot.ping)}ms`);
+const random = Math.floor(Math.random() * 100 )
+message.reply(random)
 break;
 
 case "donate":
