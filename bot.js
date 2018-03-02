@@ -113,6 +113,10 @@ case "lovetest":
 message.reply(`Lovetesting! ${Math.round(bot.ping)}ms`);
 break;
 
+case "donate":
+message.reply(`Donate Here! https://www.paypal.com`);
+break;		
+	
 case "ping":
 message.reply(`Pong! ${Math.round(bot.ping)}ms`);
 break;
