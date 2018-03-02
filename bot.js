@@ -37,7 +37,7 @@ var lt = ["100% In Love",
 "Already Couples"
 "50% In Love"
 "80% In Love"
-"79% In Love"
+"79% In Love"];
  
 bot.on("ready", function() {
       bot.user.setGame("PayBot Prefix = !" , "https://www.twitch.tv/123silly");
