@@ -119,9 +119,9 @@ break;
 
 case "work":
 if (args[1]) {
-  message.channel.sendMessage('You Have  ' + '  `' + lt[Math.floor(Math.random() * lt.length)] + '`');
+  message.channel.sendMessage('You Have  ' + ' `' + lt[Math.floor(Math.random() * lt.length)] + '`');
 } else {
-  message.channel.sendMessage("Please Provide Usernames");
+  message.channel.sendMessage("Please Provide Your Username");
 }
 break;
 
