@@ -31,13 +31,13 @@ var eb = ["You can help youself right?",
 "Outlook not so good",
 "Very doubtful"];
  
-var lt = ["100% In Love",
-"Unknown",
-"90% In Love With Someone",
-"50% In Love With Someone",
-"0% In Love With Someone",
-"20% In Love With Someone",
-"Already Are A Couple With Someone"];
+var lt = ["Earned 21$",
+"Earned 10%",
+"Earned 50$",
+"Earned 50$",
+"Earned 50$",
+"Earned 50$",
+"Earned 50$"];
 
 bot.on("ready", function() {
       bot.user.setGame("PayBot Prefix = !" , "https://www.twitch.tv/123silly");
@@ -117,7 +117,7 @@ var embedt = new Discord.RichEmbed()
 message.author.sendEmbed(embedt)
 break;
 
-case "lovetest":
+case "work":
 if (args[1]) {
   message.channel.sendMessage('Test Result ' + '  `' + lt[Math.floor(Math.random() * lt.length)] + '`');
 } else {
