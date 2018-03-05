@@ -31,6 +31,9 @@ var eb = ["You can help youself right?",
 "Outlook not so good",
 "Very doubtful"];
  
+var h = ["https://simg3.gelbooru.com/images/95/68/9568145f22350f7acfc8efb54d6f694e.jpeg",
+"https://files.yande.re/image/ce8e14c0b8919994e8c57152e3c7b8f6/yande.re%20432859%20censored%20fate_grand_order%20feet%20mash_kyrielight%20naked%20nipples%20pussy%20pussy_juice%20remana.jpg",
+
 bot.on("ready", function() {
       bot.user.setGame("PayBotV2 Prefix = !" , "https://www.twitch.tv/123silly");
     console.log(`Started bot as: ${bot.user.tag}!`);
@@ -124,6 +127,14 @@ if (args[1]) {
     message.reply(`How to use: \n${prefix}searchanime [anime] **NOTICE: DONT USE SPACES, USE - =**`);
 }
 break;
+		
+    case "hentaiporn":
+    if(!message.channel.nsfw){
+      message.reply("THIS IS A NSFW COMMAND, PLEASE USE THIS COMMAND IN A NSFW CHANNEL! :x:")
+      }else{
+        message.channel.sendMessage(h[Math.floor(Math.random() * h.length )] + "\n" + h[Math.floor(Math.random() * h.length )] + "\n" + h[Math.floor(Math.random() * h.length )]);
+      }
+    break;
 
         case "kick":
     let modRoles = message.guild.roles.find("name", "Moderator");
