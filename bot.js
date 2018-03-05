@@ -108,12 +108,15 @@ message.reply('The coin landed on tails');
 break;
 		
     case "hentaiporn":
+    message.channel.sendMessage(animepics[Math.floor(Math.random() * animepics.length )] + "\n" + animepics[Math.floor(Math.random() * animepics.length )] + "\n" + animepics[Math.floor(Math.random() * animepics.length )]);
+    break;
+    case "hentaibomb":
     if(!message.channel.nsfw){
       message.reply("THIS IS A NSFW COMMAND, PLEASE USE THIS COMMAND IN A NSFW CHANNEL! :x:")
       }else{
         message.channel.sendMessage(h[Math.floor(Math.random() * h.length )] + "\n" + h[Math.floor(Math.random() * h.length )] + "\n" + h[Math.floor(Math.random() * h.length )]);
       }
-	break;
+    break;
     case "marry":
     let mar = message.mentions.users.first();
     if (!mar) {
