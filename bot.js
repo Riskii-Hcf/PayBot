@@ -225,6 +225,20 @@ var mc = new Discord.RichEmbed()
 message.channel.sendEmbed(mc)
 break;
 		
+    case "marry":
+    let mar = message.mentions.users.first();
+    if (!mar) {
+      message.reply("Please mention a user to marry.");
+    } else {
+    var mare = new Discord.RichEmbed()
+    .setTitle(`New people has been married! :heart_eyes: :heart_eyes: `)
+    .setDescription(`:heart: <@${message.author.id}> is now married with <@${mar.id}>! :wink:`)
+    .setImage(`https://i.ytimg.com/vi/6ytPCSS8_7s/maxresdefault.jpg`)
+    .setColor(0x721487)
+    message.channel.sendEmbed(mare);
+    }
+    break;
+		
 case "clear":
 if (args[1]) {
     if (args[1] > 2) {
