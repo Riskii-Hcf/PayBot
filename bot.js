@@ -127,15 +127,6 @@ if (args[1]) {
     message.reply(`How to use: \n${prefix}searchanime [anime] **NOTICE: DONT USE SPACES, USE - =**`);
 }
 break;
-		
-    case "hentaiporn":
-    if(!message.channel.nsfw){
-      message.reply("THIS IS A NSFW COMMAND, PLEASE USE THIS COMMAND IN A NSFW CHANNEL! :x:")
-      }else{
-        message.channel.sendMessage(h[Math.floor(Math.random() * h.length )] + "\n" + h[Math.floor(Math.random() * h.length )] + "\n" + h[Math.floor(Math.random() * h.length )]);
-      }
-    break;
-
         case "kick":
     let modRoles = message.guild.roles.find("name", "Moderator");
         if (args[1]) {
